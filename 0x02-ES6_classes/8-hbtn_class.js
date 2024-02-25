@@ -1,22 +1,22 @@
 export default class HolbertonClass {
-  constructor (size, location) {
+  constructor(size, location) {
     this._size = typeof size === 'number' ? size : 0;
     this._location = typeof location === 'string' ? location : '';
   }
 
-  get size () {
+  get size() {
     return this._size;
   }
 
-  get location () {
+  get location() {
     return this._location;
   }
 
-  valueOf () {
+  valueOf() {
     return this._size;
   }
 
-  toString () {
+  toString() {
     return this._location;
   }
 }

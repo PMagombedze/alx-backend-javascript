@@ -1,32 +1,32 @@
 import Currency from './3-currency.js';
 
 export default class Pricing {
-  constructor (amount, currency) {
+  constructor(amount, currency) {
     this._amount = typeof amount === 'number' ? amount : 0;
     this._currency = currency instanceof Currency ? currency : null;
   }
 
-  get amount () {
+  get amount() {
     return this._amount;
   }
 
-  set amount (newAmount) {
+  set amount(newAmount) {
     if (typeof newAmount === 'number') {
       this._amount = newAmount;
     }
   }
 
-  get currency () {
+  get currency() {
     return this._currency;
   }
 
-  set currency (newCurrency) {
+  set currency(newCurrency) {
     if (newCurrency instanceof Currency) {
       this._currency = newCurrency;
     }
   }
 
-  displayFullPrice () {
+  displayFullPrice() {
     if (this._currency) {
       return `${this._amount} ${this._currency.name} (${this._currency.code})`;
     } else {
@@ -34,7 +34,7 @@ export default class Pricing {
     }
   }
 
-  static convertPrice (amount, conversionRate) {
+  static convertPrice(amount, conversionRate) {
     if (typeof amount === 'number' && typeof conversionRate === 'number') {
       return amount * conversionRate;
     } else {
