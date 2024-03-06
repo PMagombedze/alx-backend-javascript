@@ -1,37 +1,37 @@
 /**
  * Reading a file synchronously with Node JS
  */
-const fs = require('fs')
+const fs = require('fs');
 
 function countStudents (filepath) {
-  let info
+  let info;
   try {
-    info = fs.readFileSync(filepath, { encoding: 'utf8', flag: 'r' })
+    info = fs.readFileSync(filepath, { encoding: 'utf8', flag: 'r' });
   } catch (err) {
-    throw new Error('Cannot load the database')
+    throw new Error('Cannot load the database');
   }
 
-  const files = info.split('\n')
-  const myArr = []
-  const myArrTwo = []
+  const files = info.split('\n');
+  const myArr = [];
+  const myArrTwo = [];
 
   files.forEach((file) => {
-    const field = file.split(',')
+    const field = file.split(',');
     if (field !== [] && field !== null) {
       if (field[3] === 'CS') {
-        myArr.push(field[0])
+        myArr.push(field[0]);
       } else if (field[3] === 'SWE') {
-        myArrTwo.push(field[0])
+        myArrTwo.push(field[0]);
       }
     }
-  })
-  console.log(`Number of students: ${myArr.length + myArrTwo.length}`)
+  });
+  console.log(`Number of students: ${myArr.length + myArrTwo.length}`);
   console.log(
     `Number of students in CS: ${myArr.length}. List: ${myArr.join(', ')}`
-  )
+  );
   console.log(
     `Number of students in SWE: ${myArrTwo.length}. List: ${myArrTwo.join(', ')}`
-  )
+  );
 }
 
-module.exports = countStudents
+module.exports = countStudents;
