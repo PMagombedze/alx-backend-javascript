@@ -1,16 +1,13 @@
-const chai = require("chai");
-const expect = chai.expect;
+const assert = require('assert');
+const getPaymentTokenFromAPI = require('./6-payment_token');
 
-const getPaymentTokenFromAPI = require("./6-payment_token");
-
-describe("getPaymentTokenFromAPI", function () {
-  it("should return a data object", async function () {
-    try {
-      const res = await getPaymentTokenFromAPI(true);
-      console.log(res);
-      expect(res.data).to.equal("Successful response from the API");
-    } catch (err) {
-      throw err;
-    }
+describe('getPaymentTokenFromAPI', () => {
+  it('should return a resolved promise with payment token data when success is true', (done) => {
+    getPaymentTokenFromAPI(true)
+      .then((result) => {
+        assert.deepStrictEqual(result, { data: 'Successful response from the API' });
+        done();
+      })
+      .catch((error) => done(error));
   });
 });
