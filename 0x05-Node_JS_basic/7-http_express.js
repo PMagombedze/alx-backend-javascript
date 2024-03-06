@@ -27,9 +27,8 @@ function countStudents(path) {
         str += `Number of students in CS: ${myArr.length}. List: ${myArr.join(
           ", "
         )}\n`;
-        str += `Number of students in SWE: ${
-          myArrTwo.length
-        }. List: ${myArrTwo.join(", ")}`;
+        str += `Number of students in SWE: ${myArrTwo.length
+          }. List: ${myArrTwo.join(", ")}`;
         resolve(str);
       }
     });

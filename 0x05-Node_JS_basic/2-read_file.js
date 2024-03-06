@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function countStudents (filepath) {
+function countStudents(filepath) {
   let info;
   try {
     info = fs.readFileSync(filepath, { encoding: 'utf8', flag: 'r' });
