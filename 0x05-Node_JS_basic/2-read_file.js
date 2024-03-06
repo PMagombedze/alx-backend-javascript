@@ -14,7 +14,7 @@ function countStudents(filepath) {
 
   files.forEach((file) => {
     const field = file.split(',');
-    if (field != [] && field !== null) {
+    if (field !== [] && field !== null) {
       if (field[3] === 'CS') {
         myArr.push(field[0]);
       } else if (field[3] === 'SWE') {
