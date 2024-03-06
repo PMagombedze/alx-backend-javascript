@@ -7,7 +7,7 @@ const http = require('http')
 const hostname = '127.0.0.1'
 const port = 1245
 
-async function countStudents (path) {
+async function countStudents(path) {
   try {
     const files = await fs.promises.readFile(path, 'utf8')
     const file = files.split('\n')
