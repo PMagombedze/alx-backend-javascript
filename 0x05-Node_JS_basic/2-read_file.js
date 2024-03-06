@@ -24,11 +24,11 @@ function countStudents(filepath) {
   });
   console.log(`Number of students: ${myArr.length + myArrTwo.length}`);
   console.log(
-    `Number of students in CS: ${myArr.length}. List: ${myArr.join(", ")}`
+    `Number of students in CS: ${myArr.length}. List: ${myArr.join(', ')}`
   );
   console.log(
     `Number of students in SWE: ${myArrTwo.length}. List: ${myArrTwo.join(
-      ", "
+      ', '
     )}`
   );
 }
