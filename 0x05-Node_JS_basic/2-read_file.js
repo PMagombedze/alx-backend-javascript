@@ -4,7 +4,7 @@ function countStudents(filepath) {
   let info;
   try {
     info = fs.readFileSync(filepath, { encoding: 'utf8', flag: 'r' });
-  } catch (err) {
+  } catch(err) {
     throw new Error('Cannot load the database');
   }
 
