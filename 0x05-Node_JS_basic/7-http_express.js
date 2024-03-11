@@ -15,7 +15,7 @@ function countStudents(path) {
 
         files.forEach((file) => {
           const field = file.split(",");
-          if (field !== [] && field !== null) {
+          if (field.length > 0) {
             if (field[3] === "CS") {
               myArr.push(field[0]);
             } else if (field[3] === "SWE") {
@@ -23,12 +23,10 @@ function countStudents(path) {
             }
           }
         });
+
         let str = `Number of students: ${myArr.length + myArrTwo.length}\n`;
-        str += `Number of students in CS: ${myArr.length}. List: ${myArr.join(
-          ", "
-        )}\n`;
-        str += `Number of students in SWE: ${myArrTwo.length
-          }. List: ${myArrTwo.join(", ")}`;
+        str += `Number of students in CS: ${myArr.length}. List: ${myArr.join(", ")}\n`;
+        str += `Number of students in SWE: ${myArrTwo.length}. List: ${myArrTwo.join(", ")}`;
         resolve(str);
       }
     });

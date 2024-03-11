@@ -12,8 +12,8 @@ async function countStudents(path) {
     const myArr = [];
     const myArrTwo = [];
 
-    file.forEach((file) => {
-      const field = file.split(",");
+    file.forEach((record) => {
+      const field = record.split(",");
       if (field.length > 0) {
         if (field[3] === "CS") {
           myArr.push(field[0]);
@@ -24,12 +24,8 @@ async function countStudents(path) {
     });
 
     let str = `Number of students: ${myArr.length + myArrTwo.length}\n`;
-    str += `Number of students in CS: ${myArr.length}. List: ${myArr.join(
-      ", "
-    )}\n`;
-    str += `Number of students in SWE: ${
-      myArrTwo.length
-    }. List: ${myArrTwo.join(", ")}`;
+    str += `Number of students in CS: ${myArr.length}. List: ${myArr.join(", ")}\n`;
+    str += `Number of students in SWE: ${myArrTwo.length}. List: ${myArrTwo.join(", ")}`;
     return str;
   } catch (err) {
     throw new Error("Cannot load the database");
