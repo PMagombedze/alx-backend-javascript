@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const port = 1245;
 
-function countStudents (path) {
+function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, records) => {
       if (err) reject(new Error('Cannot load the database'));
